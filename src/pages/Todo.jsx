@@ -21,9 +21,6 @@ const Todo = () => {
             <Tasks />
 
 
-
-
-
         </div>
     );
 };

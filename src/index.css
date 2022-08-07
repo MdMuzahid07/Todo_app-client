@@ -10,7 +10,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-track {
@@ -33,5 +33,8 @@ body {
 .custom-height {
   min-height: 50rem;
   max-height: 50rem;
+}
+
+.y-scroll {
   overflow-y: scroll;
 }
