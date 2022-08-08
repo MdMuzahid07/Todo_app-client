@@ -2,6 +2,9 @@ import React from 'react';
 
 const Tasks = ({ task }) => {
     const { _id, title, todo } = task;
+
+
+
     return (
         <div className='border drop-shadow rounded-xl my-2 w-full h-32 p-2'>
             <div class="flex absolute right-2 block">
@@ -11,7 +14,7 @@ const Tasks = ({ task }) => {
             </div>
             <div>
                 <h2 className='text-xl'>{title}</h2>
-                <p><small>{todo}</small></p>
+                <p>{todo}</p>
             </div>
         </div>
     );
