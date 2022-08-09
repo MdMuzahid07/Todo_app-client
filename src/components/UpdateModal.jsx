@@ -1,10 +1,10 @@
 import React from 'react';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 
 const UpdateModal = ({ idForUpdate }) => {
 
-    const id = idForUpdate;
+    const taskId = idForUpdate;
 
     const handleUpdateSubmit = (e) => {
         e.preventDefault();
@@ -12,15 +12,30 @@ const UpdateModal = ({ idForUpdate }) => {
         const title = e.target.title.value;
         const todo = e.target.task.value;
 
-        const updatedTask = { title, todo };
+        const updatedTask = { title: title, todo: todo };
+
+        const url = `http://localhost:5000/todo/${taskId}`;
+
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedTask)
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+            })
 
         console.log(updatedTask)
 
         // e.reset()
+        // toast.success("Update task successfully!", {
+        //     position: toast.POSITION.TOP_CENTER
+        // });
 
-        toast.success("Update task successfully!", {
-            position: toast.POSITION.TOP_CENTER
-        });
+
     }
 
     return (
@@ -28,7 +43,7 @@ const UpdateModal = ({ idForUpdate }) => {
             <input type="checkbox" id="my-modal-4" class="modal-toggle" />
             <label for="my-modal-4" class="modal cursor-pointer">
                 <label class="modal-box relative rounded" for="">
-                    <p className="font-bold text-success"><small>updating id : <span className='text-black'>{id}</span></small></p>
+                    <p className="font-bold text-success"><small>updating id : <span className='text-black'>{taskId}</span></small></p>
                     <form onSubmit={handleUpdateSubmit}>
                         <input type="text" name="title" placeholder="title" className="input input-bordered w-full" required />
                         <input type="text" name="task" placeholder="task" className="input input-bordered w-full my-2" required />

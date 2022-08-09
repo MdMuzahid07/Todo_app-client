@@ -13,8 +13,8 @@ function App() {
   }
 
   return (
-    <div className="px-3 md:px-0">
-      <div className="max-w-xl mx-auto custom-height my-7 border drop-shadow rounded-xl bg-white  y-scroll">
+    <div>
+      <div className="max-w-xl mx-auto custom-height md:my-7 border drop-shadow md:rounded-xl bg-white  y-scroll">
         <Todo handleUpdate={handleUpdate} />
       </div>
       <ToastContainer />

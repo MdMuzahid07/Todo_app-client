@@ -50,7 +50,7 @@ const Tasks = ({ task, handleUpdate }) => {
             </div>
             <div>
                 <h2 className='text-xl text-success'>{title}</h2>
-                <p>{todo}</p>
+                <p><small>{todo}</small></p>
             </div>
         </div>
     );
