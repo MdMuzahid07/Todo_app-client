@@ -13,7 +13,7 @@ const Todo = ({ handleUpdate }) => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                'http://localhost:5000/todo',
+                'https://fast-refuge-43915.herokuapp.com/todo',
             );
 
             setTasks(result.data);
@@ -34,7 +34,7 @@ const Todo = ({ handleUpdate }) => {
         // send data on backend using post request
 
 
-        fetch('http://localhost:5000/todo', {
+        fetch('https://fast-refuge-43915.herokuapp.com/todo', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

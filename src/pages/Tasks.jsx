@@ -6,7 +6,7 @@ const Tasks = ({ task, handleUpdate }) => {
 
     const handleTaskDelete = (id) => {
         const ok = window.confirm("Are you sure?");
-        const url = `http://localhost:5000/todo/${id}`;
+        const url = `https://fast-refuge-43915.herokuapp.com/todo/${id}`;
 
         if (ok) {
             fetch(url, {
@@ -24,7 +24,7 @@ const Tasks = ({ task, handleUpdate }) => {
 
     }
     const handleTaskComplete = (id) => {
-        const url = `http://localhost:5000/todo/${id}`;
+        const url = `https://fast-refuge-43915.herokuapp.com/todo/${id}`;
         fetch(url, {
             method: "DELETE",
         })

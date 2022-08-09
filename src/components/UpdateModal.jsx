@@ -14,7 +14,7 @@ const UpdateModal = ({ idForUpdate }) => {
 
         const updatedTask = { title: title, todo: todo };
 
-        const url = `http://localhost:5000/todo/${taskId}`;
+        const url = `https://fast-refuge-43915.herokuapp.com/todo/${taskId}`;
 
         fetch(url, {
             method: 'PUT',
