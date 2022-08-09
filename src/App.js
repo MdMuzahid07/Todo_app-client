@@ -2,14 +2,14 @@ import Todo from "./pages/Todo";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UpdateModal from "./components/UpdateModal";
+import { useState } from "react";
 
 function App() {
 
+  const [idForUpdate, setIdForUpdate] = useState();
+
   const handleUpdate = (id) => {
-    // e.preventDefault();
-
-
-    alert(id)
+    setIdForUpdate(id)
   }
 
   return (
@@ -18,7 +18,7 @@ function App() {
         <Todo handleUpdate={handleUpdate} />
       </div>
       <ToastContainer />
-      <UpdateModal />
+      <UpdateModal idForUpdate={idForUpdate} />
     </div>
   );
 }

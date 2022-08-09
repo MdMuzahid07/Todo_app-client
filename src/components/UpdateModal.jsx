@@ -2,7 +2,9 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 
-const UpdateModal = () => {
+const UpdateModal = ({ idForUpdate }) => {
+
+    const id = idForUpdate;
 
     const handleUpdateSubmit = (e) => {
         e.preventDefault();
@@ -26,6 +28,7 @@ const UpdateModal = () => {
             <input type="checkbox" id="my-modal-4" class="modal-toggle" />
             <label for="my-modal-4" class="modal cursor-pointer">
                 <label class="modal-box relative rounded" for="">
+                    <p className="font-bold text-success"><small>updating id : <span className='text-black'>{id}</span></small></p>
                     <form onSubmit={handleUpdateSubmit}>
                         <input type="text" name="title" placeholder="title" className="input input-bordered w-full" required />
                         <input type="text" name="task" placeholder="task" className="input input-bordered w-full my-2" required />
@@ -37,7 +40,7 @@ const UpdateModal = () => {
                     </form>
                 </label>
             </label>
-        </div>
+        </div >
     );
 };
 
