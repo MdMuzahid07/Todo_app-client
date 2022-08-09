@@ -6,7 +6,7 @@ import Tasks from './Tasks';
 import { toast } from 'react-toastify';
 
 
-const Todo = () => {
+const Todo = ({ handleUpdate }) => {
 
     const [tasks, setTasks] = useState();
 
@@ -73,9 +73,8 @@ const Todo = () => {
             </div>
 
 
-
             {
-                tasks?.map((task) => <Tasks key={task._id} task={task} />)
+                tasks?.map((task) => <Tasks key={task._id} task={task} handleUpdate={handleUpdate} />)
             }
 
         </div>
