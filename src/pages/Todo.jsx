@@ -3,6 +3,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Tasks from './Tasks';
+import { toast } from 'react-toastify';
+
 
 const Todo = () => {
 
@@ -11,7 +13,7 @@ const Todo = () => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await axios(
-                'http://localhost:5000/tasks',
+                'http://localhost:5000/todo',
             );
 
             setTasks(result.data);
@@ -43,10 +45,11 @@ const Todo = () => {
             .then(data => {
                 console.log('data send!', data.acknowledged);
                 if (data.acknowledged === true) {
-                    alert("new task added")
+                    toast.success("New Task added!", {
+                        position: toast.POSITION.TOP_CENTER
+                    });
                 }
             })
-
 
     }
 
